@@ -1,0 +1,2 @@
+
+En esta carpeta se encontrarán los documentos relevantes con respecto a los experimentos realizados, prototipos, y versiones finales.
