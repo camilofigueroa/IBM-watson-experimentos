@@ -3,10 +3,10 @@
     $url = 'https://gateway.watsonplatform.net/visual-recognition/api/v3/classify?version=2018-03-19';
     
     //Lorito 
-    //$file = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Amazona_aestiva_-upper_body-8a_%281%29.jpg/800px-Amazona_aestiva_-upper_body-8a_%281%29.jpg";
+    $file = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Amazona_aestiva_-upper_body-8a_%281%29.jpg/800px-Amazona_aestiva_-upper_body-8a_%281%29.jpg";
     
     //Melones.
-    $file = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR9SSfyXCtWNlSM_7JTfPelfydSA6loQj0Pi0ChOEFlaF1XghIC";
+    //$file = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR9SSfyXCtWNlSM_7JTfPelfydSA6loQj0Pi0ChOEFlaF1XghIC";
     
     $image_url = "&url=".$file;
     
@@ -40,7 +40,7 @@
     //print_r( $objeto ); //A partir de acá se convierte en un arreglo.
     
     //echo $objeto[ 'class' ];
-    
+        
     /*foreach ($objeto as $product)
     {
         echo '<pre>';
@@ -48,14 +48,33 @@
         echo '</pre>';
     }*/
     
-    foreach( $objeto as $obj )
+    //-------------------------------------------------------------------------------------
+    
+    //Imprimiendo uno de los elementos, solamente.
+    //echo $objeto[ "images" ][ 0 ][ "classifiers" ][ 0 ][ "classes" ][ 0 ][ "class" ];
+    //echo $objeto[ "images" ][ 0 ][ "classifiers" ][ 0 ][ "classes" ][ 0 ][ "score" ];
+    
+    foreach( $objeto[ "images" ][ 0 ][ "classifiers" ][ 0 ][ "classes" ] as $p )
+    {
+        echo $p[ "class" ]."<br>";
+        echo $p[ "score" ]."<br>";
+    }
+    
+    //20200309
+    /*foreach( $objeto as $x => $x_value )
+    {
+        echo "Key=" . $x . ", Value=" . $x_value;
+        echo "<br>";
+    }*/
+    
+    /*foreach( $objeto as $obj )
     {
         print_r( $obj->class  );
-        /*$nombre_fruta = $obj->nombre_fruta;
+        $nombre_fruta = $obj->nombre_fruta;
         $cantidad = $obj->cantidad;
         echo $id_fruta." ".$nombre_fruta." ".$cantidad;
-        echo " ";*/
-    }
+        echo " ";
+    }*/
     
     
     /*$arreglo = array_values( $objeto ); //Esta función puede ser una buena opción para encontrar las claves y etiquetas viables.
